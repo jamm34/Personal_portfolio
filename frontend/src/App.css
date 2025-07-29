@@ -1,0 +1,172 @@
+#root {
+  /* max-width: 1280px;
+  margin: 0 auto; */
+  
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+h1, h2 {
+  color: #343a40;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #495057;
+}
+
+section {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Custom CSS para el layout general y pequeños ajustes */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Light background for the main content */
+}
+
+/* El app-container en App.jsx ya es fluid, solo para mantener el contexto */
+.app-container {
+  min-height: 100vh;
+}
+
+.sidebar-col {
+  /* Fija el sidebar a la izquierda y le da el color de fondo */
+  background-color: #112c44 !important;
+  color: #ffffff !important; /* Color de texto blanco para contraste */
+  position: sticky; /* Sticky para que no se desplace con el scroll */
+  top: 0;
+  height: 100vh; /* Altura completa de la ventana */
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+
+  /* Esto es para dispositivos más pequeños donde el sidebar podría ir arriba */
+  /* Ajusta estos breakpoints según necesites */
+  @media (max-width: 767.98px) { /* Bootstrap's md breakpoint - 1px */
+    position: relative;
+    height: auto; /* Altura automática en móviles */
+    width: 100%;
+    margin-bottom: 20px; /* Espacio debajo del sidebar en móviles */
+  }
+}
+
+
+.content-col {
+  background-color: #f0f2f5; /* Fondo del área de contenido */
+}
+
+.content-area-rb {
+  padding: 40px; /* Padding para todo el contenido principal */
+}
+
+
+/* --- Header Component Specifics (still some custom needed) --- */
+.profile-pic-rb {
+  width: 180px;
+  height: 300px;
+  border-radius: 5%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  
+}
+
+.nav-link-custom {
+  color: #f5f4f4 !important; /* !important para sobrescribir Bootstrap */
+  padding: 15px 30px !important;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  background-color: #283593 !important;
+  color: #ffffff !important;
+}
+
+/* --- Hero Component Specifics --- */
+.hero-name-rb {
+  font-size: 4rem;
+  color: #1a237e;
+  font-weight: 700;
+}
+
+/* --- Projects Component Specifics --- */
+.project-image-rb {
+  height: 220px; /* Fixed height for project images */
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.tech-badge {
+  background-color: #e0e7fa;
+  color: #1a237e;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+.tech-badge-logo {
+  background-color: #e0e7fa; /* Un fondo claro para el badge del logo */
+  color: #1a237e; /* Color si hubiera texto */
+  padding: 15px 20px !important;
+  border-radius: 10px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.tech-badge-logo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.tech-badge-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
