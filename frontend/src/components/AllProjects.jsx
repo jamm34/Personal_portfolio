@@ -3,9 +3,9 @@ import axios from "axios";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 
-function Projects() {
-    const { t } = useTranslation();
+function AllProjects() {
     const [projects, setProjects] = useState([]);
+    const { t } = useTranslation();
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/projects/")
@@ -56,8 +56,8 @@ function Projects() {
 
                                 </div>
                             )}                            
-                            {project.link_demo && <Button variant="primary" className="button-custom me-2" href={project.link_demo} target="_blank">{t('view_project')}</Button>}
-                             {project.link_repository && <Button variant="primary" className="button-custom me-2" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
+                            {project.link_demo && <Button variant="primary" className="button-custom me-2" href={project.link_demo} target="_blank">View Project</Button>}
+                             {project.link_repository && <Button variant="primary" className="button-custom me-2" href={project.link_repository} target="_blank">View Code</Button>}
                         </Card.Body>
                     </Card>
                 </Col>
@@ -71,17 +71,10 @@ function Projects() {
     return (
         <Container className="mt-5">
             <h2 className="display-4 mb-3 hero-name-rd">{t('personal_projects')}</h2>
-            {renderProjects(realProjects)}
-            
-            <div className="text-center my-1 mb-5">
-                <Button variant="primary" href='' className="text-center button-custom">{t('all_projects')}</Button>
-            </div>
+            {renderProjects(realProjects)}            
             <h2 className="display-4 mb-3 hero-name-rd">{t('simulated_projects')}</h2>
-            {renderProjects(simulatedProjects)}
-            <div className="text-center my-1 mb-5">
-                <Button variant="primary" href='' className="text-center button-custom">{t('all_projects')}</Button>
-            </div>
+            {renderProjects(simulatedProjects)}            
         </Container>
     );
 }
-export default Projects;
+export default AllProjects;

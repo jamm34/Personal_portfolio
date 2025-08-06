@@ -29,17 +29,17 @@ function Skills() {
 
   return (
     <section id="skills" className="py-5">
-      <h2 className="fs-1 mb-4 fw-bold text-dark">My Skills</h2>
+      <h2 className="hero-name-rd">My Skills</h2>
       <Container>
-        <Row className="g-2 justify-content-center"> {/* Agrega justify-content-center si quieres que los logos estén centrados */}
+        <Row className="g-2 justify-content-center skills-col py-4"> {/* Agrega justify-content-center si quieres que los logos estén centrados */}
           {skillsList.map((skill, idx) => (
             <Col xs="auto" key={idx} className="d-flex justify-content-center align-items-center"> {/* Centrar el contenido de la columna */}
               {/* Aquí es donde solo ponemos el logo dentro de la insignia */}
-              <Badge className="tech-badge-logo d-flex align-items-center justify-content-center p-3">
-                <Image src={skill.logo} alt={skill.name} style={{ height: '50px', width: 'auto' }} fluid />
+              <div className="tech-badge-logo d-flex align-items-center justify-content-center  p-3">
+                <Image src={skill.logo} alt={skill.name} style={{ height: '120px', width: 'auto' }} fluid />
                 {/* Opcional: si quieres un tooltip o texto oculto al pasar el mouse */}
                 <span className="visually-hidden">{skill.name}</span>
-              </Badge>
+              </div>
             </Col>
           ))}
         </Row>

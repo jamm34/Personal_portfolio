@@ -45,8 +45,11 @@ h1, h2 {
 }
 
 .lead {
-  font-size: 1.2rem;
-  color: #495057;
+  font-size: 2.2rem;
+  color: #112c44;
+  font-weight: 500;
+  line-height: 1;
+  font-style: italic;
 }
 
 section {
@@ -89,6 +92,35 @@ body {
   }
 }
 
+.button-custom {
+  background-color: #112c44; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  
+  }
+
+  .button-custom:hover {
+    transform: scale(1.07);
+  }
+
+ .skills-col {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los logos se ajusten en varias filas */
+  margin-bottom: 20px; /* Espacio debajo del área de habilidades */
+  cursor: pointer;
+  
+}
+
+.skills-custom:hover {
+  transform: scale(0.05); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el mouse */
+}
 
 .content-col {
   background-color: #f0f2f5; /* Fondo del área de contenido */
@@ -125,8 +157,14 @@ body {
 /* --- Hero Component Specifics --- */
 .hero-name-rb {
   font-size: 4rem;
-  color: #1a237e;
+  color: #112c44;
   font-weight: 700;
+}
+.hero-name-rd {
+  font-size: 3rem;
+  color: #112c44;
+  font-weight: 700;
+  font-style: italic;
 }
 
 /* --- Projects Component Specifics --- */
@@ -148,8 +186,8 @@ body {
 
 .tech-badge-logo {
   background-color: #e0e7fa; /* Un fondo claro para el badge del logo */
-  color: #1a237e; /* Color si hubiera texto */
-  padding: 15px 20px !important;
+  color: #eaeaed; /* Color si hubiera texto */
+  padding: 0px 0px !important;
   border-radius: 10px !important;
   display: flex;
   align-items: center;
@@ -169,4 +207,72 @@ body {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
+}
+
+.fake-terminal input::placeholder {
+  color: rgba(0, 255, 0, 0.6);
+}
+
+.fake-terminal input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.fake-terminal {
+  max-height: 250px; /* Altura fija que se ve bien en hero */
+  overflow-y: auto;   /* Scroll vertical */
+  scrollbar-width: thin; /* Scroll discreto en Firefox */
+}
+
+.fake-terminal::-webkit-scrollbar {
+  width: 6px;
+}
+.fake-terminal::-webkit-scrollbar-thumb {
+  background-color: rgba(0,255,0,0.3);
+  border-radius: 4px;
+}
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+.blinking-foco {
+  animation: blink 2s infinite;
+}
+
+
+.contact-section {
+  background-color: #f5f7fa;
+}
+
+.contact-box {
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-box a {
+  text-decoration: none;
+  color: #333;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+
+#contact a {
+  text-decoration: none;
+  color: #000;
+}
+
+#contact a:hover {
+  color: #0d6efd;
 }
