@@ -23,5 +23,18 @@
   "name": "Name",
   "email": "Email",
   "message": "Message",
-  "button_send": "Send"
+  "button_send": "Send",
+  "about_me_1": "I'm Jose Molina, a web developer with solid experience in React and Django, along with proficiency in other core web technologies. I specialize in creating clean, accessible, and scalable digital solutions that combine visual polish with technical efficiency. I enjoy transforming ideas into user-centered applications.   I hold a degree in Administrative Informatics and I'm currently pursuing a Master’s in Software Engineering with a focus on Artificial Intelligence. My work is driven by curiosity, continuous learning, and the desire to solve real-world problems through code.",
+  "story_title": "My Story",
+  "about_story_1": "After a spinal cord injury, many doors seemed to close.",
+  "about_story_2": "But programming became a new path—one where, even if I can't walk, I can keep growing.",
+  "about_story_3": "Through code, I’ve discovered a way to express myself, build solutions, and connect with others.",
+  "about_story_4": "Technology gave me back a sense of independence, purpose, and creativity.",
+  "about_story_5": "Each line of code I write is a reminder that limits are often just new starting points.",
+  "about_story_6": "Being a developer has allowed me to turn challenges into opportunities.",
+  "about_story_7": "I believe technology should be inclusive, because everyone deserves tools that empower.",
+  "about_story_8": "My goal is to build digital experiences that are not only functional, but meaningful.",
+  "about_story_9": "Even from a wheelchair, I can reach the world—one project at a time.",
+  "mission_content": "Build scalable, user-centered web solutions that address real needs and generate meaningful value.",
+  "vission_content": "Become a standout developer in Latin America, contributing innovative and socially impactful tech projects."
 }

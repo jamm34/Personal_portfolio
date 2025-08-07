@@ -9,6 +9,7 @@ function Hero() {
     const [input, setInput] = useState('');
     const [history, setHistory] = useState([]);
     const terminalRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -26,6 +27,7 @@ function Hero() {
         <li><code>hello world</code></li>
         <li><code>skills</code></li>
         <li><code>contact</code></li>
+        <li><code>projects</code></li>
         <li><code>clear</code></li>
       </ul>
     `,
@@ -38,11 +40,14 @@ function Hero() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const command = input.toLowerCase();
-        // Procesar comandos especiales
+        
         if (command === 'clear') {
             setHistory([]);
         } else if (command === 'contact') {
-            alert('Contacto: jammyes26@gmail.com');
+            navigate('/contact');
+            setHistory([...history, `$ ${input}`]);
+        }else if (command === 'projects') {
+            navigate('/all-projects');
             setHistory([...history, `$ ${input}`]);
         } else if (command === 'skills') {
             const target = document.getElementById("skills");
@@ -54,8 +59,8 @@ function Hero() {
             setHistory([...history, `$ ${input}`]);
             if (command.includes('hello world')) {
                 Swal.fire({
-                    title: '🌎 ¡Hola mundo!',
-                    text: 'El comando se ejecutó correctamente.',
+                    title: '🌎 ¡Hello world!',
+                    text: 'Command executed correctly.',
                     icon: 'success',
                     confirmButtonText: 'Cool',
                     background: '#1e1e1e',
@@ -75,7 +80,7 @@ function Hero() {
                 <div className="col-md-6 text-start">
                     <h1 className="display-4 mb-0 hero-name-rb">{t('hero_title')}</h1>
                     
-                    <p className="lead text-muted mb-2">{t('hero_description')}</p>
+                    <p className="lead text-muted mb-0">{t('hero_description')}</p>
                 </div>
 
 

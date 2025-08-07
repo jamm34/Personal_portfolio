@@ -2,10 +2,19 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
+
 
 function Projects() {
     const { t } = useTranslation();
     const [projects, setProjects] = useState([]);
+
+    const techColors = {
+        django: '#092e20',       // verde oscuro
+        react: '#61dafb',        // azul claro (color oficial de React)
+        bootstrap: '#7952b3',    // púrpura (color oficial de Bootstrap)
+        default: '#6c757d',      // gris neutro para tecnologías no listadas
+    };
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/projects/")
@@ -31,33 +40,33 @@ function Projects() {
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
                                     {project.technologies.split(',').map((tech, index) => {
                                         const trimmedTech = tech.trim().toLowerCase();
-                                        const logo = tech.logo; 
-
+                                        const logo = tech.logo;
+                                        const color = techColors[trimmedTech] || techColors.default;
                                         return (
                                             <span key={index} style={{
-                                                color: '#fff',
+                                                color: '#112c44',
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 gap: '6px',
                                                 border: '1px solid #eee',
                                                 borderRadius: '6px',
                                                 padding: '4px 8px',
-                                                background: '#119120ff'
+                                                background: '#fff'
                                             }}>
                                                 {logo ? (
                                                     <img src={logo} alt={tech.name || trimmedTech} style={{ width: 20, height: 20 }} />
                                                 ) : (
                                                     <i className={`devicon-${trimmedTech}-plain colored`} style={{ fontSize: '20px' }}></i>
                                                 )}
-                                                <span style={{ textTransform: 'capitalize' }}>{tech.name || trimmedTech}</span>
+                                                <span style={{ textTransform: 'capitalize' }}><strong>{tech.name || trimmedTech}</strong></span>
                                             </span>
                                         );
                                     })}
 
                                 </div>
-                            )}                            
+                            )}
                             {project.link_demo && <Button variant="primary" className="button-custom me-2" href={project.link_demo} target="_blank">{t('view_project')}</Button>}
-                             {project.link_repository && <Button variant="primary" className="button-custom me-2" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
+                            {project.link_repository && <Button variant="primary" className="button-custom me-2" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
                         </Card.Body>
                     </Card>
                 </Col>
@@ -71,15 +80,15 @@ function Projects() {
     return (
         <Container className="mt-5">
             <h2 className="display-4 mb-3 hero-name-rd">{t('personal_projects')}</h2>
-            {renderProjects(realProjects)}
-            
+            {renderProjects(realProjects.slice(0, 2))}
+
             <div className="text-center my-1 mb-5">
-                <Button variant="primary" href='' className="text-center button-custom">{t('all_projects')}</Button>
+                <Link to="/all-projects" className="btn btn-primary button-custom">{t('all_projects')}</Link>
             </div>
             <h2 className="display-4 mb-3 hero-name-rd">{t('simulated_projects')}</h2>
-            {renderProjects(simulatedProjects)}
+            {renderProjects(simulatedProjects.slice(0, 2))}
             <div className="text-center my-1 mb-5">
-                <Button variant="primary" href='' className="text-center button-custom">{t('all_projects')}</Button>
+                <Link to="/all-projects" className="btn btn-primary button-custom">{t('all_projects')}</Link>
             </div>
         </Container>
     );

@@ -24,5 +24,18 @@
   "name": "Nombre",
   "email": "Correo Electrónico",
   "message": "Mensaje",
-  "button_send": "Enviar"
+  "button_send": "Enviar",
+  "about_me_1": "Soy Jose Molina, desarrollador web con sólida experiencia en React y Django, además de un buen dominio de otras tecnologías clave en el desarrollo web moderno. Me especializo en crear soluciones digitales limpias, accesibles y escalables, que combinan una estética visual cuidada con un rendimiento técnico eficiente. Disfruto transformar ideas en aplicaciones funcionales centradas en el usuario. Tengo una licenciatura en Informática Administrativa y actualmente curso una maestría en Ingeniería de Software con enfoque en Inteligencia Artificial. Mi trabajo se guía por la curiosidad, el aprendizaje constante y el deseo de resolver problemas reales a través del código.",
+  "story_title": "Mi Historia",
+  "about_story_1": "Después de una lesión medular, muchas puertas parecían cerrarse.",
+  "about_story_2": "Pero la programación se convirtió en un nuevo camino, donde aunque no puedo caminar, puedo seguir desarrollándome.",
+  "about_story_3": "A través del código encontré una forma de expresarme, crear soluciones y conectar con los demás.",
+  "about_story_4": "La tecnología me devolvió la independencia, el propósito y la creatividad.",
+  "about_story_5": "Cada línea de código que escribo me recuerda que los límites muchas veces son nuevos puntos de partida.",
+  "about_story_6": "Ser desarrollador me ha permitido transformar los retos en oportunidades.",
+  "about_story_7": "Creo que la tecnología debe ser inclusiva, porque todos merecemos herramientas que nos empoderen.",
+  "about_story_8": "Mi objetivo es crear experiencias digitales que no solo funcionen, sino que también tengan significado.",
+  "about_story_9": "Aunque esté en una silla de ruedas, puedo llegar al mundo... proyecto a proyecto.",
+  "mission_content": "Crear soluciones web escalables y centradas en el usuario que aborden necesidades reales y generen valor significativo.",
+  "vision_content": "Convertirme en un desarrollador destacado en América Latina, contribuyendo con proyectos tecnológicos innovadores y de impacto social."
 }

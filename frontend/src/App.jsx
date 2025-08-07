@@ -15,6 +15,7 @@ import Contact from './components/Contact';
 import { Container, Row, Col } from 'react-bootstrap';
 import FloatingLanguageToggle from './components/FloatingLanguageToggle';
 
+
 function App() {
   return (
     <Router>

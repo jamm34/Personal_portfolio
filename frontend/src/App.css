@@ -33,7 +33,7 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
 }
 
 .read-the-docs {
@@ -98,6 +98,18 @@ body {
   border: none; /* Sin borde */
   padding: 10px 20px; /* Espaciado interno */
   font-size: 1rem; /* Tamaño de fuente */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  
+  }
+  .button-custom-projects {
+  background-color: #112c44; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 5px 15px; /* Espaciado interno */
+  font-size: 0.7rem; /* Tamaño de fuente */
   border-radius: 5px; /* Bordes redondeados */
   transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
