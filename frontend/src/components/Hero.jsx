@@ -3,6 +3,8 @@ import Swal from 'sweetalert2';
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import SectionLayout from "./SectionLayout";
+
 
 function Hero() {
     const { t } = useTranslation();
@@ -40,13 +42,13 @@ function Hero() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const command = input.toLowerCase();
-        
+
         if (command === 'clear') {
             setHistory([]);
         } else if (command === 'contact') {
             navigate('/contact');
             setHistory([...history, `$ ${input}`]);
-        }else if (command === 'projects') {
+        } else if (command === 'projects') {
             navigate('/all-projects');
             setHistory([...history, `$ ${input}`]);
         } else if (command === 'skills') {
@@ -66,7 +68,7 @@ function Hero() {
                     background: '#1e1e1e',
                     color: '#00ff00'
                 });
-                
+
             }
         }
 
@@ -74,12 +76,12 @@ function Hero() {
     };
 
     return (
-        <section className="hero py-5 container">
+        <SectionLayout bgColorClass="bg-white" id="hero">
             <div className="row align-items-center">
                 {/* Texto del Hero */}
                 <div className="col-md-6 text-start">
                     <h1 className="display-4 mb-0 hero-name-rb">{t('hero_title')}</h1>
-                    
+
                     <p className="lead text-muted mb-0">{t('hero_description')}</p>
                 </div>
 
@@ -110,7 +112,7 @@ function Hero() {
                     </div>
                 </div>
             </div>
-        </section>
+        </SectionLayout>
     );
 
 }

@@ -11,10 +11,13 @@ import htmlLogo from '../assets/html.png';
 import cssLogo from '../assets/css.png';
 import sqlLogo from '../assets/sql.png';
 import gitLogo from '../assets/git.png';
-
+import { useTranslation } from 'react-i18next';
+import SectionLayout from './SectionLayout';
 
 
 function Skills() {
+  const { t } = useTranslation();
+
   const skillsList = [
     { name: 'Django', logo: djangoLogo }, // ¡Ahora usa la variable importada!
     { name: 'React', logo: reactLogo },
@@ -28,8 +31,8 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-5">
-      <h2 className="hero-name-rd">My Skills</h2>
+    <SectionLayout tbgColorClass="bg-white" id="hero">
+      <h2 className="hero-name-rd">{t('skills')}</h2>
       <Container>
         <Row className="g-2 justify-content-center skills-col py-4"> {/* Agrega justify-content-center si quieres que los logos estén centrados */}
           {skillsList.map((skill, idx) => (
@@ -44,7 +47,7 @@ function Skills() {
           ))}
         </Row>
       </Container>
-    </section>
+    </SectionLayout>
   );
 }
 

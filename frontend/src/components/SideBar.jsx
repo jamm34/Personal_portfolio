@@ -1,12 +1,12 @@
 import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import profileImage from '../assets/profile-image.jpg';
+import profileImage from '../assets/Perfil-JM.png';
 import { useTranslation } from 'react-i18next';
 
-function Header() {
+function SideBar() {
     const { t } = useTranslation();
     return (
-        
+
         <header className="d-flex flex-column align-items-center py-4">
             <div className="profile-section text-center mb-0" >
                 <img src={profileImage} alt="Jose Molina" className="profile-pic-rb" />
@@ -18,10 +18,10 @@ function Header() {
                 <Nav.Link as={NavLink} to="/about" className="nav-link-custom">{t('about')}</Nav.Link>
                 <Nav.Link as={NavLink} to="/all-projects" className="nav-link-custom">{t('projects')}</Nav.Link>
                 <Nav.Link as={NavLink} to="/contact" className="nav-link-custom">{t('contact')}</Nav.Link>
-                
+
             </Nav>
         </header>
     );
 }
 
-export default Header;
+export default SideBar;

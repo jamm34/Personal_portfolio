@@ -4,12 +4,12 @@ import './App.css';
 import './index.css';
 
 import Hero from './components/Hero';
-import Header from './components/Header';
+import SideBar from './components/SideBar';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
-import About from './components/About'; 
-import AllProjects from './components/AllProjects'; 
+import About from './components/About';
+import AllProjects from './components/AllProjects';
 import Contact from './components/Contact';
 
 import { Container, Row, Col } from 'react-bootstrap';
@@ -22,7 +22,7 @@ function App() {
       <Container fluid className='app-container p-0'>
         <Row className='g-0'>
           <Col xs={12} md={3} lg={3} className='sidebar-col'>
-            <Header />
+            <SideBar />
           </Col>
 
           <Col xs={12} md={9} lg={9} className='content-col'>
@@ -34,7 +34,7 @@ function App() {
                     <Projects />
                     <Skills />
                     <Footer />
-                    
+
                   </>
                 } />
                 <Route path="/about" element={<About />} />
