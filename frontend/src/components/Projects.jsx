@@ -13,11 +13,11 @@ function Projects() {
         django: '#092e20',       // verde oscuro
         react: '#61dafb',        // azul claro (color oficial de React)
         bootstrap: '#7952b3',    // púrpura (color oficial de Bootstrap)
-        default: '#6c757d',      // gris neutro para tecnologías no listadas
+        default: '#6c757d',      // gris neutro para tecnologías no listadass
     };
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/projects/")
+        axios.get(`${import.meta.env.VITE_API_URL}api/projects/`)
             .then((res) => {
                 setProjects(res.data);
             })
