@@ -1,6 +1,6 @@
 import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import profileImage from '../../assets/Perfil-JM.jpg';
+import profileImage from '../../assets/perfil-JM.jpg';
 import { useTranslation } from 'react-i18next';
 import { FiMenu, FiX, FiGrid, FiMail, FiInfo, FiHome } from "react-icons/fi";
 import "./SideBar.css";
