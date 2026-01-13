@@ -1,0 +1,112 @@
+.sidebar-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background: linear-gradient(180deg, #010e1a, #020b14);
+  transform: translateX(-100%);
+  z-index: 1000;
+  padding: 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.sidebar-container.active {
+  transform: translateX(0);
+}
+
+/* ===== PROFILE ===== */
+.profile-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.profile-pic-rb {
+  width: 150px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+.profile-section h1 {
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.profile-section p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+
+/* ===== NAV ===== */
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 0.5rem;
+}
+
+
+/* ===== LINKS ===== */
+.nav-link-custom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  color: #cfd8dc;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link-custom svg {
+  font-size: 1.1rem;
+}
+
+.nav-link-custom:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+}
+
+.nav-link-custom.active {
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #111;
+  color: white;
+  border: none;
+  z-index: 1100;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1000px) {
+  .sidebar-container {
+    transform: translateX(0);
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+}

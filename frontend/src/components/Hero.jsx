@@ -52,7 +52,9 @@ function Hero() {
             navigate('/all-projects');
             setHistory([...history, `$ ${input}`]);
         } else if (command === 'skills') {
-            const target = document.getElementById("skills");
+            navigate('/skills');
+            setHistory([...history, `$ ${input}`]);
+
             if (target) {
                 target.scrollIntoView({ behavior: "smooth" });
             }
