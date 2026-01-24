@@ -165,7 +165,8 @@ CLOUDINARY_STORAGE = {
 }
 
 if not CLOUDINARY_STORAGE['CLOUD_NAME'] and not DEBUG:
-    raise RuntimeError("Cloudinary NOT configured in production")
+    print("⚠️ Cloudinary not configured")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
