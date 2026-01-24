@@ -71,6 +71,15 @@ CORS_ALLOWED_ORIGINS = [
 
 ROOT_URLCONF = 'portafolio_backend.urls'
 
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.code.run",
+]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
