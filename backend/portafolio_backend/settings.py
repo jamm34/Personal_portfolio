@@ -16,7 +16,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG') 
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -63,7 +63,11 @@ MIDDLEWARE = [
     
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    'https://josemolina-portfolio.vercel.app'
+]
 
 ROOT_URLCONF = 'portafolio_backend.urls'
 
@@ -160,7 +164,9 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
-assert CLOUDINARY_STORAGE['CLOUD_NAME'], "Cloudinary NOT loaded"
+if not CLOUDINARY_STORAGE['CLOUD_NAME'] and not DEBUG:
+    raise RuntimeError("Cloudinary NOT configured in production")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
