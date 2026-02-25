@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Hero from './components/Hero';
 import SideBar from './components/sidebar/SideBar';
 import Projects from './components/Projects';
@@ -51,4 +50,3 @@ function App() {
 }
 
 export default App;
-

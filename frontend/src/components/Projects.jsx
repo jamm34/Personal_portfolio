@@ -39,8 +39,8 @@ function Projects() {
                             {project.technologies && (
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
                                     {project.technologies.split(',').map((tech, index) => {
-                                        const trimmedTech = tech.trim().toLowerCase();
-                                        const logo = tech.logo;
+                                        const techLabel = tech.trim();
+                                        const trimmedTech = techLabel.toLowerCase();
                                         const color = techColors[trimmedTech] || techColors.default;
                                         return (
                                             <span key={index} style={{
@@ -53,12 +53,8 @@ function Projects() {
                                                 padding: '4px 8px',
                                                 background: '#fff'
                                             }}>
-                                                {logo ? (
-                                                    <img src={logo} alt={tech.name || trimmedTech} style={{ width: 20, height: 20 }} />
-                                                ) : (
-                                                    <i className={`devicon-${trimmedTech}-plain colored`} style={{ fontSize: '20px' }}></i>
-                                                )}
-                                                <span style={{ textTransform: 'capitalize' }}><strong>{tech.name || trimmedTech}</strong></span>
+                                                <i className={`devicon-${trimmedTech}-plain colored`} style={{ fontSize: '20px' }}></i>
+                                                <span style={{ textTransform: 'capitalize' }}><strong>{techLabel}</strong></span>
                                             </span>
                                         );
                                     })}

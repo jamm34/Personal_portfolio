@@ -48,8 +48,8 @@ function AllProjects() {
                             {project.technologies && (
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px', justifyContent: 'center' }}>
                                     {project.technologies.split(',').map((tech, index) => {
-                                        const trimmedTech = tech.trim().toLowerCase();
-                                        const logo = tech.logo;
+                                        const techLabel = tech.trim();
+                                        const trimmedTech = techLabel.toLowerCase();
                                         const color = techColors[trimmedTech] || techColors.default;
                                         return (
                                             <span key={index} className="tech-badge-item" style={{
@@ -64,12 +64,8 @@ function AllProjects() {
                                                 padding: '2px 6px',
                                                 background: color
                                             }}>
-                                                {logo ? (
-                                                    <img src={logo} alt={tech.name || trimmedTech} style={{ width: 10, height: 10 }} />
-                                                ) : (
-                                                    <i className={`devicon-${trimmedTech}-plain colored`} style={{ fontSize: '15px' }}></i>
-                                                )}
-                                                <span style={{ textTransform: 'capitalize' }}>{tech.name || trimmedTech}</span>
+                                                <i className={`devicon-${trimmedTech}-plain colored`} style={{ fontSize: '15px' }}></i>
+                                                <span style={{ textTransform: 'capitalize' }}>{techLabel}</span>
                                             </span>
                                         );
                                     })}

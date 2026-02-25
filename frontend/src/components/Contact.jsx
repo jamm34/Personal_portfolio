@@ -8,15 +8,28 @@ import { useTranslation } from 'react-i18next';
 function Contact() {
     const { t } = useTranslation();
     const form = useRef();
+    const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     const sendEmail = (e) => {
         e.preventDefault();
 
+        if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Configuration missing',
+                text: 'Email service is not configured yet.',
+                confirmButtonText: 'OK',
+            });
+            return;
+        }
+
         emailjs.sendForm(
-            'service_kxe3trp',     // Reemplaza esto
-            'template_mc5kfnn',    // Reemplaza esto
+            emailServiceId,
+            emailTemplateId,
             form.current,
-            'H9lzIzZYnzfyW3dYi'      // Reemplaza esto
+            emailPublicKey
         ).then(
             (result) => {
                 Swal.fire({

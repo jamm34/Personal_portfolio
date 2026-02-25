@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Badge, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
 // IMPORTA CADA LOGO INDIVIDUALMENTE AQUÍ
 import djangoLogo from '../assets/django.png';
@@ -31,7 +31,7 @@ function Skills() {
   ];
 
   return (
-    <SectionLayout tbgColorClass="bg-white" id="hero">
+    <SectionLayout bgColorClass="bg-white" id="skills">
       <h2 className="hero-name-rd">{t('skills')}</h2>
       <Container>
         <Row className="g-2 justify-content-center skills-col py-4"> {/* Agrega justify-content-center si quieres que los logos estén centrados */}
