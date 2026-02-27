@@ -61,8 +61,8 @@ function Projects() {
 
                                 </div>
                             )}
-                            {project.link_demo && <Button variant="primary" className="button-custom me-2" href={project.link_demo} target="_blank">{t('view_project')}</Button>}
-                            {project.link_repository && <Button variant="primary" className="button-custom me-2" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
+                            {project.link_demo && <Button variant="primary" className="button-custom me-1 btn-sm" href={project.link_demo} target="_blank">{t('view_project')}</Button>}
+                            {project.link_repository && <Button variant="primary" className="button-custom me-2 btn-sm" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
                         </Card.Body>
                     </Card>
                 </Col>
