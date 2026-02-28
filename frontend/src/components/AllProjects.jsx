@@ -37,13 +37,12 @@ function AllProjects() {
 
 
     const renderProjects = (list) => (
-
-        <Row>
+        <Row className="g-4">
             {list.map(project => (
-                <Col key={project.id} sm={6} md={5} lg={4} className='mb-4'>
-                    <Card className="project-card">
-                        <Card.Img variant="top" src={project.image} style={{ height: '140px', objectFit: 'cover' }} />
-                        <Card.Body className="text-center" style={{ padding: '10px' }}>
+                <Col key={project.id} sm={12} md={6} lg={4} className='mb-1'>
+                    <Card className="allprojects-card h-100">
+                        <Card.Img variant="top" src={project.image} className="allprojects-image" />
+                        <Card.Body className="text-center d-flex flex-column">
                             <Card.Title>{project.title}</Card.Title>
                             {project.technologies && (
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px', justifyContent: 'center' }}>
@@ -52,7 +51,7 @@ function AllProjects() {
                                         const trimmedTech = techLabel.toLowerCase();
                                         const color = techColors[trimmedTech] || techColors.default;
                                         return (
-                                            <span key={index} className="tech-badge-item" style={{
+                                            <span key={index} className="tech-badge-item tech-pill" style={{
                                                 color: '#112c44',
                                                 fontSize: '10.5px',
                                                 fontWeight: 'bold',
@@ -72,8 +71,10 @@ function AllProjects() {
 
                                 </div>
                             )}
-                            {project.link_demo && <Button variant="primary" className="button-custom-projects me-1 btn-sm" href={project.link_demo} target="_blank">View Project</Button>}
-                            {project.link_repository && <Button variant="primary" className="button-custom-projects me-2 btn-sm" href={project.link_repository} target="_blank">View Code</Button>}
+                            <div className="project-actions mt-auto pt-2">
+                                {project.link_demo && <Button variant="primary" className="button-custom-projects me-2 btn-sm" href={project.link_demo} target="_blank">{t('view_project')}</Button>}
+                                {project.link_repository && <Button variant="primary" className="button-custom-projects btn-sm" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
+                            </div>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -85,10 +86,10 @@ function AllProjects() {
     const simulatedProjects = projects.filter(p => p.project_type === 'simulated');
 
     return (
-        <Container className="mt-5">
-            <h2 className="display-4 mb-3 hero-name-rd">{t('personal_projects')}</h2>
+        <Container className="mt-5 all-projects-premium">
+            <h2 className="display-4 mb-3 hero-name-rd section-title-premium">{t('personal_projects')}</h2>
             {renderProjects(realProjects)}
-            <h2 className="display-4 mb-3 hero-name-rd">{t('simulated_projects')}</h2>
+            <h2 className="display-4 mb-3 hero-name-rd section-title-premium mt-5">{t('simulated_projects')}</h2>
             {renderProjects(simulatedProjects)}
         </Container>
     );

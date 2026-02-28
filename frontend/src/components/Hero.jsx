@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import SectionLayout from "./SectionLayout";
 
 function Hero() {
@@ -69,14 +70,23 @@ function Hero() {
     };
 
     return (
-        <SectionLayout bgColorClass="bg-white" id="hero">
-            <div className="row align-items-center">
-                <div className="col-md-6 text-start">
+        <SectionLayout bgColorClass="bg-white hero-premium" id="hero">
+            <div className="row align-items-center g-4">
+                <div className="col-md-6 text-start hero-copy">
+                    <p className="hero-eyebrow mb-2">Fullstack Developer</p>
                     <h1 className="display-4 mb-0 hero-name-rb">{t('hero_title')}</h1>
-                    <p className="lead text-muted mb-0">{t('hero_description')}</p>
+                    <p className="lead text-muted mb-3">{t('hero_description')}</p>
+                    <div className="hero-actions">
+                        <Button as={Link} to="/all-projects" className="button-custom me-2 mb-2">
+                            {t('projects')}
+                        </Button>
+                        <Button as={Link} to="/contact" variant="outline-primary" className="hero-outline-btn mb-2">
+                            {t('contact')}
+                        </Button>
+                    </div>
                 </div>
 
-                <div className="col-md-6 mt-4">
+                <div className="col-md-6 mt-2 mt-md-0 hero-terminal-wrap">
                     <button
                         className="btn btn-outline-success blinking-foco mb-2"
                         onClick={showSuggestions}

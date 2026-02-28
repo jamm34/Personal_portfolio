@@ -1,91 +1,109 @@
 .card {
-  padding: 1em;
+  padding: 0.6rem;
+  border: 1px solid rgba(18, 56, 92, 0.08);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 .read-the-docs {
   color: #888;
 }
 
-h1, h2 {
-  color: #343a40;
+h1,
+h2 {
+  color: var(--color-primary);
 }
 
 .lead {
-  font-size: 2.2rem;
-  color: #112c44;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--color-muted);
   font-weight: 500;
-  line-height: 1;
-  font-style: italic;
+  line-height: 1.5;
 }
 
 section {
   transition: all 0.4s ease-in-out;
 }
 
-/* Custom CSS para el layout general y pequeños ajustes */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5; /* Light background for the main content */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* El app-container en App.jsx ya es fluid, solo para mantener el contexto */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+}
+
 .app-container {
   min-height: 100vh;
 }
 
-.button-custom {
-  background-color: #112c44; /* Color de fondo del botón */
-  color: #ffffff; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 1rem; /* Tamaño de fuente */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  cursor: pointer; /* Cambia el cursor al pasar por encima */
-  
-  }
-  .button-custom-projects {
-  background-color: #112c44; /* Color de fondo del botón */
-  color: #ffffff; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  padding: 5px 15px; /* Espaciado interno */
-  font-size: 0.7rem; /* Tamaño de fuente */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  cursor: pointer; /* Cambia el cursor al pasar por encima */
-  
-  }
-
-  .button-custom:hover {
-    transform: scale(1.07);
-  }
-
- .skills-col {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los logos se ajusten en varias filas */
-  margin-bottom: 20px; /* Espacio debajo del área de habilidades */
+.button-custom,
+.button-custom-projects {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-2));
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 8px 20px rgba(18, 56, 92, 0.25);
   cursor: pointer;
-  
+}
+
+.button-custom {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.button-custom-projects {
+  padding: 0.48rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.button-custom:hover,
+.button-custom-projects:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 24px rgba(18, 56, 92, 0.3);
+}
+
+.skills-col {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .skills-custom:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el mouse */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .content-col {
-  background-color: #f0f2f5; /* Fondo del área de contenido */
+  background-color: transparent;
 }
 
 .content-area-rb {
-  padding: 40px; /* Padding para todo el contenido principal */
+  padding: 2.2rem 2rem;
 }
 
 .sidebar-col {
@@ -119,38 +137,115 @@ body {
   }
 
   .content-area-rb {
-    padding: 32px 20px;
+    padding: 1.8rem 1rem;
   }
 }
 
 @media (max-width: 576px) {
   .card .button-custom,
   .card .button-custom-projects {
-    font-size: 0.7rem;
-    padding: 5px 12px;
+    font-size: 0.72rem;
+    padding: 0.45rem 0.75rem;
     white-space: nowrap;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .projects-premium .card-title {
+    font-size: 1.05rem;
   }
 }
 
-
-/* --- Hero Component Specifics --- */
 .hero-name-rb {
-  font-size: 4rem;
-  color: #112c44;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--color-primary);
   font-weight: 700;
+  line-height: 1.1;
 }
+
 .hero-name-rd {
-  font-size: 3rem;
-  color: #112c44;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--color-primary);
   font-weight: 700;
   font-style: italic;
+  line-height: 1.12;
 }
 
-/* --- Projects Component Specifics --- */
+.hero-premium {
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 5% 0%, rgba(13, 110, 253, 0.08), transparent 45%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff);
+}
+
+.hero-copy,
+.hero-terminal-wrap,
+.projects-premium .card {
+  animation: fadeUp 0.5s ease-out both;
+}
+
+.hero-terminal-wrap {
+  animation-delay: 0.1s;
+}
+
+.hero-eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary-2);
+  font-weight: 800;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.hero-outline-btn {
+  border-radius: 10px;
+  border-width: 2px;
+  font-weight: 700;
+  padding: 0.52rem 0.95rem;
+}
+
+.section-title-premium {
+  margin-bottom: 1.2rem !important;
+}
+
+.projects-premium .card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-card-premium .card-body {
+  padding: 1rem;
+}
+
+.tech-pill {
+  border: 1px solid rgba(18, 56, 92, 0.08) !important;
+  border-radius: 999px !important;
+  padding: 0.3rem 0.7rem !important;
+}
+
+.project-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
 .project-image-rb {
-  height: 220px; /* Fixed height for project images */
+  height: 220px;
   object-fit: cover;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(18, 56, 92, 0.08);
+  border-radius: 12px 12px 0 0;
+}
+
+.card-img-top {
+  border-radius: 12px 12px 0 0;
 }
 
 .tech-badge {
@@ -162,24 +257,23 @@ body {
   font-weight: 500;
 }
 
-
 .tech-badge-logo {
-  background-color: #e0e7fa; /* Un fondo claro para el badge del logo */
-  color: #eaeaed; /* Color si hubiera texto */
-  padding: 0px 0px !important;
+  background-color: #e0e7fa;
+  color: #eaeaed;
+  padding: 0 !important;
   border-radius: 10px !important;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80px;
   width: 100px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
 }
 
 .tech-badge-logo:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .tech-badge-logo img {
@@ -198,43 +292,104 @@ body {
 }
 
 .fake-terminal {
-  max-height: 250px; /* Altura fija que se ve bien en hero */
-  overflow-y: auto;   /* Scroll vertical */
-  scrollbar-width: thin; /* Scroll discreto en Firefox */
+  max-height: 260px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
 }
 
 .fake-terminal::-webkit-scrollbar {
   width: 6px;
 }
+
 .fake-terminal::-webkit-scrollbar-thumb {
-  background-color: rgba(0,255,0,0.3);
+  background-color: rgba(0, 255, 0, 0.3);
   border-radius: 4px;
 }
 
-
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.2; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .blinking-foco {
   animation: blink 2s infinite;
 }
 
-
 .contact-section {
   background-color: #f5f7fa;
 }
 
+.contact-premium-section {
+  background:
+    radial-gradient(circle at 0% 10%, rgba(13, 110, 253, 0.08), transparent 38%),
+    #f8fbff;
+}
+
+.contact-form-card,
+.contact-info-card {
+  background: #fff;
+  border: 1px solid rgba(18, 56, 92, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  animation: fadeUp 0.55s ease-out both;
+}
+
+.contact-info-card {
+  animation-delay: 0.08s;
+}
+
+.contact-input {
+  border-radius: 10px;
+  border: 1px solid rgba(18, 56, 92, 0.16);
+  padding: 0.65rem 0.85rem;
+}
+
+.contact-input:focus {
+  border-color: var(--color-primary-2);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.14);
+}
+
+.contact-premium-image {
+  width: min(100%, 360px);
+}
+
+.contact-links p {
+  margin-bottom: 0.85rem;
+  color: #213547;
+}
+
+.contact-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
 .contact-box {
   background-color: #ffffff;
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(18, 56, 92, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .contact-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-hover);
 }
 
 .contact-box a {
@@ -246,7 +401,6 @@ body {
   text-decoration: underline;
 }
 
-
 #contact a {
   text-decoration: none;
   color: #000;
@@ -256,12 +410,23 @@ body {
   color: #0d6efd;
 }
 
+@media (max-width: 991px) {
+  .contact-form-card,
+  .contact-info-card {
+    padding: 1.35rem !important;
+  }
+}
+
 .tech-badge-item {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    cursor: default;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: default;
 }
 
 .tech-badge-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  border-top-color: rgba(18, 56, 92, 0.16) !important;
 }

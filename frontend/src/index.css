@@ -1,5 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --font-heading: "Sora", "Segoe UI", sans-serif;
+  --color-bg: #eef3f9;
+  --color-surface: #ffffff;
+  --color-text: #14263b;
+  --color-muted: #5f6f82;
+  --color-primary: #12385c;
+  --color-primary-2: #0d6efd;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-soft: 0 12px 30px rgba(16, 42, 67, 0.1);
+  --shadow-hover: 0 18px 40px rgba(16, 42, 67, 0.18);
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -8,8 +21,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(13, 110, 253, 0.12), transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(18, 56, 92, 0.1), transparent 30%),
+    var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }

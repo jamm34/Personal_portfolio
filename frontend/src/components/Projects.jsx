@@ -29,21 +29,21 @@ function Projects() {
 
     const renderProjects = (list) => (
 
-        <Row>
+        <Row className="g-4">
             {list.map(project => (
-                <Col key={project.id} sm={12} md={6} lg={6} className='mb-4'>
-                    <Card>
-                        <Card.Img variant="top" src={project.image} />
-                        <Card.Body className="text-center">
+                <Col key={project.id} sm={12} md={6} lg={6} className='mb-1'>
+                    <Card className="project-card-premium h-100">
+                        <Card.Img variant="top" src={project.image} className="project-image-rb" />
+                        <Card.Body className="text-center d-flex flex-column">
                             <Card.Title>{project.title}</Card.Title>
                             {project.technologies && (
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '10px', justifyContent: 'center' }}>
                                     {project.technologies.split(',').map((tech, index) => {
                                         const techLabel = tech.trim();
                                         const trimmedTech = techLabel.toLowerCase();
                                         const color = techColors[trimmedTech] || techColors.default;
                                         return (
-                                            <span key={index} style={{
+                                            <span key={index} className="tech-pill" style={{
                                                 color: '#112c44',
                                                 display: 'flex',
                                                 alignItems: 'center',
@@ -61,8 +61,10 @@ function Projects() {
 
                                 </div>
                             )}
-                            {project.link_demo && <Button variant="primary" className="button-custom me-1 btn-sm" href={project.link_demo} target="_blank">{t('view_project')}</Button>}
-                            {project.link_repository && <Button variant="primary" className="button-custom me-2 btn-sm" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
+                            <div className="project-actions mt-auto pt-2">
+                                {project.link_demo && <Button variant="primary" className="button-custom me-2 btn-sm" href={project.link_demo} target="_blank">{t('view_project')}</Button>}
+                                {project.link_repository && <Button variant="primary" className="button-custom btn-sm" href={project.link_repository} target="_blank">{t('view_code')}</Button>}
+                            </div>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -74,16 +76,16 @@ function Projects() {
     const simulatedProjects = projects.filter(p => p.project_type === 'simulated');
 
     return (
-        <Container className="mt-5">
-            <h2 className="display-4 mb-3 hero-name-rd">{t('personal_projects')}</h2>
+        <Container className="mt-5 projects-premium">
+            <h2 className="display-4 mb-3 hero-name-rd section-title-premium">{t('personal_projects')}</h2>
             {renderProjects(realProjects.slice(0, 2))}
 
-            <div className="text-center my-1 mb-5">
+            <div className="text-center my-2 mb-5">
                 <Link to="/all-projects" className="btn btn-primary button-custom">{t('all_projects')}</Link>
             </div>
-            <h2 className="display-4 mb-3 hero-name-rd">{t('simulated_projects')}</h2>
+            <h2 className="display-4 mb-3 hero-name-rd section-title-premium">{t('simulated_projects')}</h2>
             {renderProjects(simulatedProjects.slice(0, 2))}
-            <div className="text-center my-1 mb-5">
+            <div className="text-center my-2 mb-5">
                 <Link to="/all-projects" className="btn btn-primary button-custom">{t('all_projects')}</Link>
             </div>
         </Container>
