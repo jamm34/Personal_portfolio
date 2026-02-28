@@ -11,6 +11,7 @@
   padding: 2rem 1.2rem;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -55,8 +56,11 @@
 .nav-section {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   gap: 6px;
   padding-top: 0.5rem;
+  flex: 1;
+  min-height: 0;
 }
 
 
@@ -86,6 +90,31 @@
   background: linear-gradient(135deg, #0d6efd, #0b5ed7);
   color: #fff;
   font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #198754;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.cv-download-btn:hover {
+  background: #157347;
+  color: #fff;
 }
 
 /* ===== HAMBURGER ===== */

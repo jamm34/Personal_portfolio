@@ -2,7 +2,7 @@ import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import profileImage from '../../assets/Perfil-JM.jpg';
 import { useTranslation } from 'react-i18next';
-import { FiMenu, FiX, FiGrid, FiMail, FiInfo, FiHome } from "react-icons/fi";
+import { FiMenu, FiX, FiGrid, FiMail, FiInfo, FiHome, FiDownload } from "react-icons/fi";
 import "./SideBar.css";
 import { useState } from "react";
 
@@ -43,7 +43,15 @@ function SideBar() {
 
                 </Nav>
                 <div className="sidebar-footer">
-
+                    <a
+                        href="/cv-jose-molina.pdf"
+                        download
+                        className="cv-download-btn"
+                        onClick={handleClick}
+                    >
+                        <FiDownload />
+                        {t('download_cv')}
+                    </a>
                 </div>
             </header>
         </>

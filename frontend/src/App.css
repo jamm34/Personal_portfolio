@@ -123,6 +123,15 @@ body {
   }
 }
 
+@media (max-width: 576px) {
+  .card .button-custom,
+  .card .button-custom-projects {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    white-space: nowrap;
+  }
+}
+
 
 /* --- Hero Component Specifics --- */
 .hero-name-rb {
