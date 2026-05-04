@@ -33,7 +33,14 @@ function Projects() {
             {list.map(project => (
                 <Col key={project.id} sm={12} md={6} lg={6} className='mb-1'>
                     <Card className="project-card-premium h-100">
-                        <Card.Img variant="top" src={project.image} className="project-image-rb" />
+                        <div className="project-image-overlay-wrap" tabIndex={project.description ? 0 : undefined}>
+                            <Card.Img variant="top" src={project.image} alt={project.title} className="project-image-rb" />
+                            {project.description && (
+                                <div className="project-description-overlay">
+                                    <p>{project.description}</p>
+                                </div>
+                            )}
+                        </div>
                         <Card.Body className="text-center d-flex flex-column">
                             <Card.Title>{project.title}</Card.Title>
                             {project.technologies && (

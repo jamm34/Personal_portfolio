@@ -238,10 +238,55 @@ body {
 }
 
 .project-image-rb {
+  width: 100%;
   height: 220px;
   object-fit: cover;
   border-bottom: 1px solid rgba(18, 56, 92, 0.08);
   border-radius: 12px 12px 0 0;
+}
+
+.project-image-overlay-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  outline: none;
+}
+
+.project-image-overlay-wrap:focus-visible {
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.35);
+}
+
+.project-description-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: #ffffff;
+  text-align: center;
+  background: rgba(7, 25, 42, 0.86);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.project-image-overlay-wrap:hover .project-description-overlay,
+.project-image-overlay-wrap:focus .project-description-overlay,
+.project-image-overlay-wrap:focus-within .project-description-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-description-overlay p {
+  max-height: 100%;
+  margin: 0;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+  white-space: pre-line;
 }
 
 .card-img-top {
