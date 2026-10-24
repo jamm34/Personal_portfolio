@@ -11,6 +11,7 @@ import htmlLogo from '../assets/html.png';
 import cssLogo from '../assets/css.png';
 import sqlLogo from '../assets/sql.png';
 import gitLogo from '../assets/git.png';
+import tailwindLogo from '../assets/tailwind.png'
 import { useTranslation } from 'react-i18next';
 import SectionLayout from './SectionLayout';
 
@@ -28,6 +29,7 @@ function Skills() {
     { name: 'CSS', logo: cssLogo },
     { name: 'SQL', logo: sqlLogo },
     { name: 'Git', logo: gitLogo },
+    { name: 'Tailwind', logo: tailwindLogo}
   ];
 
   return (
